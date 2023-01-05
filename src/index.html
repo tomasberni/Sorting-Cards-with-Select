@@ -12,18 +12,64 @@
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
+
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <section>
+      <div class="container-fluid">
+        <div id="cabecera" class="row mt-3 mb-5">
+          <div class="col-6 d-flex align-items-center">
+            <h1>Original:</h1>
+            <input
+              id="usuario-select"
+              type="number"
+              min="1"
+              max="9"
+              class="input-height input-width ms-3"
+              placeholder=""
+              aria-label="userinput"
+              aria-describedby="basic-addon1"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              onselectstart="return false"
+              onpaste="return false;"
+              onCopy="return false"
+              onCut="return false"
+              onDrag="return false"
+              onDrop="return false"
+              autocomplete="off"
+              onkeydown="return false;"
+            />
+            <button
+              id="obtenerValor"
+              type="button"
+              class="btn btn-light input-height ms-2"
+            >
+              Draw
+            </button>
+            <button
+              id="botonSorteador"
+              type="button"
+              class="btn btn-light input-height ms-1"
+            >
+              Sort
+            </button>
+          </div>
+          <div class="col-6 d-flex justify-content-end align-items-center">
+            <img
+              id="breathcode-icon"
+              src="https://secure.meetupstatic.com/photos/event/4/9/2/9/600_464718729.jpeg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div id="medio" class="row mt-5 mb-5">
+          <div id="cartas-shuffle" class="d-flex"></div>
+        </div>
+        <div id="abajo" class="row mt-5 mb-3">
+          <h1>Select sort Log:</h1>
+          <!-- Acá van las cartas generadas de la segunda fila de cartas -->
+          <div id="cartas-sort" class="d-flex"></div>
+        </div>
       </div>
-    </div>
+    </section>
   </body>
 </html>
